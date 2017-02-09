@@ -25,7 +25,8 @@
     "package-win": "npm run build && build --win --x64",
     "package-linux": "npm run build && build --linux",
     "package-all": "npm run build && build -mwl",
-    "cleanup": "mop -v"
+    "cleanup": "mop -v",
+    "rebuild" : "electron-rebuild -f -w sqlite3"
   },
   "browserslist": "electron 1.4",
   "build": {
@@ -123,6 +124,7 @@
     "electron": "^1.4.15",
     "electron-builder": "^12.2.2",
     "electron-devtools-installer": "^2.0.1",
+    "electron-rebuild": "^1.5.7",
     "enzyme": "^2.7.1",
     "eslint": "^3.14.0",
     "eslint-config-airbnb": "^14.0.0",
@@ -170,7 +172,8 @@
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "source-map-support": "^0.4.10"
+    "source-map-support": "^0.4.10",
+  	"sqlite3": "^3.1.8"
   },
   "devEngines": {
     "node": ">=6.x",
