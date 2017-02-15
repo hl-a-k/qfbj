@@ -4,6 +4,26 @@ let menu;
 let template;
 let mainWindow = null;
 
+function createWindow() {
+  mainWindow = new BrowserWindow({
+    show: false,
+    width: 1024,
+    height: 728
+  });
+
+  mainWindow.loadURL(`file://${__dirname}/app.html`);
+
+  mainWindow.webContents.on('did-finish-load', () => {
+    mainWindow.show();
+    mainWindow.focus();
+  });
+
+  mainWindow.on('closed', () => {
+    mainWindow = null;
+  });
+}
+
+
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support'); // eslint-disable-line
   sourceMapSupport.install();
@@ -18,6 +38,14 @@ if (process.env.NODE_ENV === 'development') {
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
+});
+
+app.on('activate', () => {
+  // On OS X it's common to re-create a window in the app when the
+  // dock icon is clicked and there are no other windows open.
+  if (mainWindow === null) {
+    createWindow();
+  }
 });
 
 
@@ -35,31 +63,17 @@ const installExtensions = async () => {
     // TODO: Use async interation statement.
     //       Waiting on https://github.com/tc39/proposal-async-iteration
     //       Promises will fail silently, which isn't what we want in development
-    return Promise
+    Promise
       .all(extensions.map(name => installer.default(installer[name], forceDownload)))
       .catch(console.log);
   }
 };
 
+
 app.on('ready', async () => {
   await installExtensions();
+  createWindow()
 
-  mainWindow = new BrowserWindow({
-    show: false,
-    width: 1024,
-    height: 728
-  });
-
-  mainWindow.loadURL(`file://${__dirname}/app.html`);
-
-  mainWindow.webContents.on('did-finish-load', () => {
-    mainWindow.show();
-    mainWindow.focus();
-  });
-
-  mainWindow.on('closed', () => {
-    mainWindow = null;
-  });
 
   if (process.env.NODE_ENV === 'development') {
     mainWindow.openDevTools();
