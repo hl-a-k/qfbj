@@ -7,6 +7,8 @@ import routes from './routes';
 import configureStore from './store/configureStore';
 import './app.global.css';
 
+import 'elemental/less/elemental.less'
+
 const store = configureStore();
 const history = syncHistoryWithStore(hashHistory, store);
 

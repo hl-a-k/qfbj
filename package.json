@@ -26,7 +26,7 @@
     "package-linux": "npm run build && build --linux",
     "package-all": "npm run build && build -mwl",
     "cleanup": "mop -v",
-    "rebuild" : "electron-rebuild -f -w sqlite3"
+    "rebuild": "electron-rebuild -f -w sqlite3"
   },
   "browserslist": "electron 1.4",
   "build": {
@@ -147,6 +147,8 @@
     "html-webpack-plugin": "^2.26.0",
     "jsdom": "^9.9.1",
     "json-loader": "^0.5.4",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
     "minimist": "^1.2.0",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2",
@@ -164,8 +166,12 @@
   },
   "dependencies": {
     "electron-debug": "^1.1.0",
+    "elemental": "^0.6.1",
     "font-awesome": "^4.7.0",
+    "material-ui": "^0.16.7",
     "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-bootstrap-table": "^2.11.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
@@ -173,7 +179,7 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "source-map-support": "^0.4.10",
-  	"sqlite3": "^3.1.8"
+    "sqlite3": "^3.1.8"
   },
   "devEngines": {
     "node": ">=6.x",

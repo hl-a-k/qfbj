@@ -15,7 +15,11 @@ export default validate({
     }, {
       test: /\.json$/,
       loader: 'json-loader'
-    }]
+    },  // LESS
+      {
+        test: /\.less$/,
+        loader: 'style!css!less?sourceMap'
+      }]
   },
 
   output: {
