@@ -1,10 +1,10 @@
 // @flow
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
-import users from './users'
+import trades from './trades'
 
 const rootReducer = combineReducers({
-  users,
+  trades,
   routing
 });
 
