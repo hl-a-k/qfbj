@@ -20,14 +20,7 @@ render(
 );
 
 
-import {Trade} from './utils/db'
-import {tradeInit} from './actions/trades'
+import {selectTrades} from './utils/db'
 
-
-Trade.findAndCountAll({
-  offset: 0,
-  limit: 10
-}).then(result => {
-  store.dispatch(tradeInit({rows: result.rows, currentPage: 1, pageSize: 10, count: result.count, limit: 10}))
-})
+selectTrades(1,store.dispatch)
 

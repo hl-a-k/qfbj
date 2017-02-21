@@ -9,10 +9,3 @@ export function pageSelect(rows,count,page) {
     page:page
   };
 }
-
-export function tradeInit(state) {
-  return {
-    type: TRADES_INIT,
-    state:state
-  };
-}

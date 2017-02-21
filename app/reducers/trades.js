@@ -12,8 +12,6 @@ export default function counter(state = {rows: [], currentPage: 0, pageSize: 10,
         count: action.count,
         limit: state.limit
       }
-    case TRADES_INIT:
-      return action.state
     default:
       return state
   }
