@@ -1,3 +1,11 @@
+#How to start develop in Windows 10
+```bash
+cd qfbj
+tyarn
+tyran dev
+```
+
+
 # electron-react-boilerplate
 
 [![Build Status][travis-image]][travis-url]
