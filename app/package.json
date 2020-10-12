@@ -17,7 +17,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "hummus-recipe": "^1.6.9",
     "sequelize": "^3.30.2",
     "sqlite3": "^3.1.8"
   }
