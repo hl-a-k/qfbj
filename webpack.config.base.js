@@ -4,6 +4,7 @@
 
 import path from 'path';
 import validate from 'webpack-validator';
+import { dependencies as externals } from './app/package.json';
 
 export default validate({
   module: {
@@ -39,5 +40,5 @@ export default validate({
 
   plugins: [],
 
-  externals: ["Sequelize","sequelize","sqlite3"]
+  externals: Object.keys(externals || {})
 });

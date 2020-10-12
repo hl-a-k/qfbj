@@ -177,7 +177,13 @@ app.on('ready', async () => {
         click() {
           mainWindow.setFullScreen(!mainWindow.isFullScreen());
         }
-      }]
+      }, {
+          label: 'Toggle Developer Tools',
+          accelerator: 'Alt+Command+I',
+          click() {
+            mainWindow.toggleDevTools();
+          }
+        }]
     }, {
       label: 'Window',
       submenu: [{
@@ -260,7 +266,13 @@ app.on('ready', async () => {
         click() {
           mainWindow.setFullScreen(!mainWindow.isFullScreen());
         }
-      }]
+      }, {
+          label: 'Toggle Developer Tools',
+          accelerator: 'Alt+Command+I',
+          click() {
+            mainWindow.toggleDevTools();
+          }
+        }]
     }, {
       label: 'Help',
       submenu: [{

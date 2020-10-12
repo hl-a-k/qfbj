@@ -1,5 +1,5 @@
 export const PAGE_SELECT = 'PAGE_SELECT';
-export const TRADES_INIT = 'TRADES_INIT'
+export const TOGGLE_MODAL = 'TOGGLE_MODAL'
 
 export function pageSelect(rows,count,page) {
   return {
@@ -8,4 +8,11 @@ export function pageSelect(rows,count,page) {
     count:count,
     page:page
   };
+}
+
+export function toggleModal() {
+  return{
+    type:TOGGLE_MODAL
+  }
+
 }
