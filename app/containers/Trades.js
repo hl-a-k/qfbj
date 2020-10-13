@@ -22,10 +22,16 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
       if(!values.trade_date){
         values.trade_date = new Date()
       }
-      Trade.build(values).save().then(() => {
-        selectTrades(1,dispatch)
-        queryStat(dispatch)
+      values.version = 1
+      Trade.max('id').then(id => {
+        // console.log(id)
+        values.id = id + 1
+        Trade.build(values).save().then(() => {
+          selectTrades(1,dispatch)
+          queryStat(dispatch)
+        })
       })
+
     }
     dispatch(toggleModal())
   }
