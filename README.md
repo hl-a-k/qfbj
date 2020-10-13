@@ -1,10 +1,12 @@
 #How to start develop in Windows 10
+version of node is: v6.17.1
+
 ```bash
 cd qfbj
-tyarn
-tyran dev
+npm install
+npm run dev
 ```
-
+you maybe need a vpn ^_^
 
 # electron-react-boilerplate
 

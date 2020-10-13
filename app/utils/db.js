@@ -6,7 +6,7 @@ import {showStat} from '../actions/stat'
 let home = require('os').homedir()
 let sequelize = new Sequelize('', '', '', {
   dialect: 'sqlite',
-  storage: `${home}/Library/Account/account.db`
+  storage: `account2.db`
 })
 
 export var TradeType = sequelize.define('trade_type',{
